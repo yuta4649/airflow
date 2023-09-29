@@ -5,12 +5,12 @@ metadata:
 spec:
   tls:
     - hosts:
-        - airflow.example.com
+        - example.com
   rules:
-    - host: airflow.example.com
+    - host: example.com
       http:
         paths:
-          - path: /
+          - path: /airflow
             pathType: Prefix
             backend:
               service:
