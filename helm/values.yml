@@ -130,13 +130,13 @@ ingress:
     annotations: {}
 
     # The path for the web Ingress
-    path: "/airflow"
+    path: "/"
 
     # The pathType for the above path (used only with Kubernetes v1.19 and above)
     pathType: "ImplementationSpecific"
 
     # The hostname for the web Ingress (Deprecated - renamed to `ingress.web.hosts`)
-    host: "example.com"
+    host: "airflow.example.com"
 
     # The hostnames or hosts configuration for the web Ingress
     hosts: []
@@ -252,7 +252,7 @@ allowPodLaunching: true
 # Environment variables for all airflow containers
 env:
   - name: AIRFLOW__WEBSERVER__BASE_URL
-    value: "https://example.com/airflow/"
+    value: "http://airflow.example.com/"
 # - name: ""
 #   value: ""
 
