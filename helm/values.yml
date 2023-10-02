@@ -1203,7 +1203,7 @@ webserver:
 
 # Airflow Triggerer Config
 triggerer:
-  enabled: true
+  enabled: false
   # Number of airflow triggerers in the deployment
   replicas: 1
   # Max number of old replicasets to retain
@@ -1607,7 +1607,7 @@ flower:
 
 # StatsD settings
 statsd:
-  enabled: true
+  enabled: false
   # Max number of old replicasets to retain
   revisionHistoryLimit: ~
 
