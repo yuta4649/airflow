@@ -124,7 +124,7 @@ ingress:
   # Configs for the Ingress of the web Service
   web:
     # Enable web ingress resource
-    enabled: false
+    enabled: true
 
     # Annotations for the web Ingress
     annotations: {}
@@ -136,7 +136,7 @@ ingress:
     pathType: "ImplementationSpecific"
 
     # The hostname for the web Ingress (Deprecated - renamed to `ingress.web.hosts`)
-    host: ""
+    host: "airflow.example.com"
 
     # The hostnames or hosts configuration for the web Ingress
     hosts: []
@@ -149,7 +149,7 @@ ingress:
     #     secretName: ""
 
     # The Ingress Class for the web Ingress (used only with Kubernetes v1.19 and above)
-    ingressClassName: ""
+    ingressClassName: "nginx"
 
     # configs for web Ingress TLS (Deprecated - renamed to `ingress.web.hosts[*].tls`)
     tls:
@@ -250,7 +250,9 @@ executor: "CeleryExecutor"
 allowPodLaunching: true
 
 # Environment variables for all airflow containers
-env: []
+env:
+  - name: AIRFLOW__WEBSERVER__BASE_URL
+    value: "http://airflow.example.com/"
 # - name: ""
 #   value: ""
 
@@ -1201,7 +1203,7 @@ webserver:
 
 # Airflow Triggerer Config
 triggerer:
-  enabled: true
+  enabled: false
   # Number of airflow triggerers in the deployment
   replicas: 1
   # Max number of old replicasets to retain
@@ -1605,7 +1607,7 @@ flower:
 
 # StatsD settings
 statsd:
-  enabled: true
+  enabled: false
   # Max number of old replicasets to retain
   revisionHistoryLimit: ~
 
