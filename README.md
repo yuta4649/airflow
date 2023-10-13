@@ -25,15 +25,15 @@
 
 ## 構築手順
 
-### 初期構築手順
+初期構築手順
 ```bash
 helm upgrade --install airflow ./
 ```
-### 更新手順
+更新手順
 ```bash
 helm upgrade airflow ./
 ```
-### 削除手順
+削除手順
 ```bash
 helm delete airflow
 ```
