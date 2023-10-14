@@ -241,7 +241,7 @@ rbac:
 
 # Airflow executor
 # One of: LocalExecutor, LocalKubernetesExecutor, CeleryExecutor, KubernetesExecutor, CeleryKubernetesExecutor
-executor: "CeleryExecutor"
+executor: "KubernetesExecutor"
 
 # If this is true and using LocalExecutor/KubernetesExecutor/CeleryKubernetesExecutor, the scheduler's
 # service account will have access to communicate with the api-server and launch pods.
@@ -250,9 +250,9 @@ executor: "CeleryExecutor"
 allowPodLaunching: true
 
 # Environment variables for all airflow containers
-env:
-  - name: AIRFLOW__WEBSERVER__BASE_URL
-    value: "http://airflow.example.com/"
+env: []
+  # - name: AIRFLOW__WEBSERVER__BASE_URL
+  #   value: "http://airflow.example.com/"
 # - name: ""
 #   value: ""
 
